@@ -18,8 +18,8 @@
                     <h1>Titulo: <%= item.titulo%></h1>
                     <p>Descripción: <%= item.descrip%></p>
                     <p>Fecha: <%= item.fecha %></p>
-                    <a href="/delete/:id">Eliminar</a>
-                    <a href="/edit/:id">Editar</a>
+                    <a href="/delete/<%= item.id %>">Eliminar</a>
+                    <a href="/edit/<%= item.id %>">Editar</a>
                 </div>
         <% }); %>
     </div>
