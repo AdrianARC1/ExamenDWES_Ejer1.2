@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -13,10 +15,9 @@ header {
 }
 header div a {
   color: white;
-  text-decoration: none;
   margin: 0px 10px;
   margin-left: 10px;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #imagenes {
@@ -40,4 +41,52 @@ header div a {
 #imagenes #divimg img {
   width: 300px;
   border-radius: 10px;
+  height: 200px;
+}
+#imagenes #divimg #botones a {
+  padding: 10px;
+  border-radius: 10px;
+  background: #123456;
+  color: white;
+}
+#imagenes #divimg #botones #elim {
+  background: red;
+}
+#imagenes #divimg #iconos {
+  width: 30vh;
+  display: flex;
+  justify-content: space-around;
+}
+#imagenes #divimg #iconos a {
+  color: black;
+  font-size: 25px;
+}
+
+#form {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#form form {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 70vh;
+  padding: 30px;
+  justify-content: space-evenly;
+  background: #a6b2be;
+  border-radius: 20px;
+}
+#form form input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid;
+}
+#form form button {
+  padding: 10px;
+  border-radius: 10px;
+  background: #123456;
+  color: white;
+  width: 50%;
 }/*# sourceMappingURL=style.css.map */
