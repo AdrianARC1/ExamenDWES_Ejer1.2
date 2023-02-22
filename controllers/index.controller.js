@@ -26,7 +26,7 @@ const getDeleteFotos=async (req, res, next)=>{
     console.log(req.params);
     const {id} =req.params
     await pool.query('DELETE from fotos where id = ?',id)
-    // res.redirect('/fotos')
+    res.redirect('/fotos')
   }
 
 const getEditFoto=async (req, res, next)=>{
@@ -89,5 +89,4 @@ const postEditFoto=async (req, res, next)=>{
 
 module.exports={getFotos,getAddFotos,postAddFotos,getDeleteFotos,getEditFoto,postEditFoto, getLikeFoto, getDislikeFoto,getMasvotadas, getMenosvotadas}
 
-// , getDislikeFoto
 
