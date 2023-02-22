@@ -1,8 +1,43 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+header {
+  height: 10vh;
+  background: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+header div a {
+  color: white;
+  text-decoration: none;
+  margin: 0px 10px;
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+#imagenes {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#imagenes #divimg {
+  height: 80vh;
+  width: 30%;
+  margin-top: 30px;
+  border: 1px solid;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#imagenes #divimg img {
+  width: 300px;
+  border-radius: 10px;
+}/*# sourceMappingURL=style.css.map */
