@@ -2,14 +2,49 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+
   </head>
   <body>
     <%- include('partials/navegacion') %>
 
-    <div>
-      <h1>Bienvenido a mi página web, en la cual podrás subir cualquier foto sin excepcion alguna :D</h1>
-      
+    <div id="prin">
+      <div id="enlace">
+        <h1>Bienvenido a mi página web, en la cual podrás subir cualquier foto sin excepcion alguna :D</h1>
+        <p>¿Te gustaría empezar ya a llenar tu colección de fotos? Pues no se diga más, empecemos!</p>
+        <a href="/addfotos">Añadir foto</a>
+      </div>
     </div>
   </body>
 </html>
+
+<style>
+  #prin{
+    height: 90vh;
+    background: url('https://images.canvasondemand.com/image-assets/f5b90758-2b6e-4d53-9691-fd799ca5dbf5.jpg?v=637983349572093000');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+  }
+  #enlace{
+    width: 80%;
+    height: 300px;
+    padding: 20px;
+    background: wheat;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  a{
+    padding: 10px;
+    border-radius: 10px;
+    background: #000;
+    width: 150px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+  }
+</style>

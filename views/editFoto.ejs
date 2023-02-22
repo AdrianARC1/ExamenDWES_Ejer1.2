@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/links') %>
     <title>Document</title>
 </head>
 <body>
     <%- include('partials/navegacion') %>
 
-    <form action="/edit/<%= newFoto.id%>" method="post">
-        <input type="text" placeholder="Imagen" name="imagen" value="<%= newFoto.imagen %>">
-        <input type="text" placeholder="Descripcion" name="descrip" value="<%= newFoto.descrip %>">
-        <input type="text" placeholder="Titulo" name="titulo" value="<%= newFoto.titulo %>">
-        <input type="date" name="fecha" value="<%= newFoto.fecha %>">
-        <button type="submit">Enviar</button>
-    </form>
+    <div id="form">
+        <form action="/edit/<%= newFoto.id%>" method="post">
+            <input type="text" placeholder="Imagen" name="imagen" value="<%= newFoto.imagen %>">
+            <input type="text" placeholder="Descripcion" name="descrip" value="<%= newFoto.descrip %>">
+            <input type="text" placeholder="Titulo" name="titulo" value="<%= newFoto.titulo %>">
+            <input type="date" name="fecha" value="<%= newFoto.fecha %>">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 </body>
 </html>
