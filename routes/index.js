@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../db')
+const {getFotos,getAddFotos,postAddFotos,getDeleteFotos,getEditFoto,postEditFoto, getLikeFoto, getDislikeFoto, getMasvotadas, getMenosvotadas} =require('../controllers/index.controller')
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,49 +11,25 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/fotos', async (req, res, next)=>{
-  const [resul] = await pool.query('SELECT * FROM fotos')
-  // console.log(resul);
-  res.render('fotos', {resul})
-  // res.render('fotos')
-})
+router.get('/fotos', getFotos)
 
 
-router.get('/addfotos', (req, res, next)=>{
-  res.render('addFotos')
-})
+router.get('/addfotos', getAddFotos)
 
-router.post('/addfotos', async (req, res, next)=>{
-  // console.log(req.body)
-  await pool.query('INSERT INTO fotos set ?',req.body)
+router.post('/addfotos', postAddFotos)
 
-  res.redirect('/fotos')
-})
+router.get('/delete/:id', getDeleteFotos)
 
-router.get('/delete/:id', async (req, res, next)=>{
-  console.log(req.params);
-  const {id} =req.params
-  await pool.query('DELETE from fotos where id = ?',id)
-  res.redirect('/fotos')
-})
+router.get('/edit/:id', getEditFoto)
 
-router.get('/edit/:id', async (req, res, next)=>{
-  console.log(req.params);
-  const {id} =req.params
-  const [resul] = await pool.query('SELECT * FROM fotos where id = ?', id)
-  // console.log(resul)
-  // console.log(resul[0])
-  const newFoto = resul[0]
+router.post('/edit/:id', postEditFoto)
 
-  res.render('editFoto', {newFoto})
-})
+router.get('/like/:id', getLikeFoto)
 
-router.post('/edit/:id', async (req, res, next)=>{
-  const {id} =req.params
-  const {imagen, descrip, titulo, fecha} = req.body
-  await pool.query('UPDATE fotos set ? where id = ?', [req.body,id])
+router.get('/dislike/:id', getDislikeFoto)
 
-  res.redirect('/fotos')
-})
+router.get('/masvotadas', getMasvotadas)
+
+router.get('/menosvotadas', getMenosvotadas)
 
 module.exports = router;
